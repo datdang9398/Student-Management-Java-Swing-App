@@ -1,0 +1,124 @@
+package Model;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Objects;
+
+public class SinhVien implements Serializable , Comparable<SinhVien> {
+	private int maSinhVien;
+	private String tenSinhVien;
+	private Tinh queQuan;
+	private LocalDate ngaySinh;
+	private boolean gioiTinh;
+	private float diemMon1, diemMon2, diemMon3;
+	
+	public SinhVien() {
+	}
+
+	public SinhVien(int maSinhVien, String tenSinhVien, Tinh queQuan, LocalDate ngaySinh, boolean gioiTinh, float diemMon1,
+			float diemMon2, float diemMon3) {		
+		this.maSinhVien = maSinhVien;
+		this.tenSinhVien = tenSinhVien;
+		this.queQuan = queQuan;
+		this.ngaySinh = ngaySinh;
+		this.gioiTinh = gioiTinh;
+		this.diemMon1 = diemMon1;
+		this.diemMon2 = diemMon2;
+		this.diemMon3 = diemMon3;
+	}
+
+	public int getMaSinhVien() {
+		return maSinhVien;
+	}
+
+	public void setMaSinhVien(int maSinhVien) {
+		this.maSinhVien = maSinhVien;
+	}
+
+	public String getTenSinhVien() {
+		return tenSinhVien;
+	}
+
+	public void setTenSinhVien(String tenSinhVien) {
+		this.tenSinhVien = tenSinhVien;
+	}
+
+	public Tinh getQueQuan() {
+		return queQuan;
+	}
+
+	public void setQueQuan(Tinh queQuan) {
+		this.queQuan = queQuan;
+	}
+
+	public LocalDate getNgaySinh() {
+		return ngaySinh;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(maSinhVien);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		SinhVien other = (SinhVien) obj;
+		return maSinhVien == other.maSinhVien;
+	}
+
+	public void setNgaySinh(LocalDate ngaySinh) {
+		this.ngaySinh = ngaySinh;
+	}
+
+	public boolean isGioiTinh() {
+		return gioiTinh;
+	}
+
+	public void setGioiTinh(boolean gioiTinh) {
+		this.gioiTinh = gioiTinh;
+	}
+
+	public float getDiemMon1() {
+		return diemMon1;
+	}
+
+	public void setDiemMon1(float diemMon1) {
+		this.diemMon1 = diemMon1;
+	}
+
+	public float getDiemMon2() {
+		return diemMon2;
+	}
+
+	public void setDiemMon2(float diemMon2) {
+		this.diemMon2 = diemMon2;
+	}
+
+	public float getDiemMon3() {
+		return diemMon3;
+	}
+
+	public void setDiemMon3(float diemMon3) {
+		this.diemMon3 = diemMon3;
+	}
+
+	@Override
+	public String toString() {
+		return "SinhVien [maSinhVien=" + maSinhVien + ", tenSinhVien=" + tenSinhVien + ", queQuan=" + queQuan + ", ngaySinh="
+				+ ngaySinh + ", gioiTinh=" + gioiTinh + ", diemMon1=" + diemMon1 + ", diemMon2=" + diemMon2
+				+ ", diemMon3=" + diemMon3 + "]";
+	}
+
+	@Override
+	public int compareTo(SinhVien sv) {
+		// TODO Auto-generated method stub
+		return this.maSinhVien-(sv.maSinhVien);
+	}
+	
+}
