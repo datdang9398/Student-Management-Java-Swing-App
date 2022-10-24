@@ -428,7 +428,7 @@ public class QLSVView extends JFrame {
 			model_table.removeRow(i_row);
 		} 
 	}
-
+	// tạo SV từ thông tin vừa nhập để thực hiện thêm hoặc cập nhật
 	public void thucHienThemSinhVien() {
 		try {
 			int maSinhVien = Integer.valueOf(this.textField_MaSinhVien.getText());
@@ -460,6 +460,7 @@ public class QLSVView extends JFrame {
 		}
 	}
 	
+	//Kiểm tra tồn tại của SV để thực hiện thêm hoặc cập nhật, nếu thêm thì thực hiện hiển thị ra table
 	public void themHoacCapNhatSinhVien(SinhVien sv) {
 		DefaultTableModel model_table = (DefaultTableModel) table.getModel();
 		if(!this.model.kiemTraTonTai(sv)) {
@@ -487,6 +488,7 @@ public class QLSVView extends JFrame {
 		}
 		}	
 	}
+	
  	public void themSinhVienVaoTable(SinhVien sv) {
 		DefaultTableModel model_table = (DefaultTableModel) table.getModel();
 		model_table.addRow(new Object[] {
@@ -561,6 +563,7 @@ public class QLSVView extends JFrame {
 			this.themSinhVienVaoTable(sv);
 		}
 	}
+	
 	public void thucHienTaiLaiDuLieu(Comparator a) {
 		this.thucHienXoaBang();
 		ArrayList<SinhVien> dssv = this.model.getDsSinhVien();
